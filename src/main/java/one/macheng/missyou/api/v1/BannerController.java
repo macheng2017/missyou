@@ -4,12 +4,11 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
+@RequestMapping("/v1/banner/")
+//用一个通用的method @RequestMapping还可以用作前缀
+// 使用http://localhost:8080/v1/banner/test访问,这个就是restFul api 的自描述性
 public class BannerController {
-    //    @GetMapping("/test")
-    @RequestMapping(value = "/test", method = {RequestMethod.GET, RequestMethod.POST})
-
-    // 如果每个方法都需要ResponseBody 可以提取到类上
-    // 如果@Controller 和 @ResponseBody 可以合为 @RestController
+    @GetMapping("/test")
     public String test() {
         return "hello 世界1234567";
     }
