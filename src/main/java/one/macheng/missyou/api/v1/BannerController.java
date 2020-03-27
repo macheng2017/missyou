@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.*;
 //用一个通用的method @RequestMapping还可以用作前缀
 // 使用http://localhost:8080/v1/banner/test访问,这个就是restFul api 的自描述性
 public class BannerController {
-    @Autowired
+    @Autowired(required = false)
     private Diana diana;
 
     @GetMapping("/test")
